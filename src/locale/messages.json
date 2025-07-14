@@ -1,0 +1,6 @@
+{
+  "locale": "en-US",
+  "translations": {
+    "2392513405978236898": "{$START_BLOCK_FOR}{$START_TAG_MAT_OPTION} {$INTERPOLATION} {$CLOSE_TAG_MAT_OPTION}{$CLOSE_BLOCK_FOR}"
+  }
+}

@@ -8,12 +8,13 @@
       [formControl]="myControl"
       [matAutocomplete]="auto"
     />
-    <mat-autocomplete #auto="matAutocomplete" i18n="@@countryName">
+    <mat-autocomplete #auto="matAutocomplete">
       @for (option of filteredOptions | async; track option) {
-        <mat-option [value]="option.name">
-          {{ option.name }}
+        <mat-option [value]="option.name | translate">
+          {{ option.name | translate }}
         </mat-option>
       }
     </mat-autocomplete>
   </mat-form-field>
 </form>
+<!--invalid некорректное значение,очищение филтра-->

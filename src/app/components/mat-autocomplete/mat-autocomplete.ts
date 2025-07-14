@@ -5,6 +5,7 @@ import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {map, Observable, startWith} from 'rxjs';
 import {AsyncPipe} from '@angular/common';
 import {AutocompleteService} from '../../services/autocomplete-service';
+import {TranslatePipe} from '@ngx-translate/core';
 
 export interface Country {
   code: string;
@@ -20,7 +21,8 @@ export interface Country {
     ReactiveFormsModule,
     MatAutocompleteTrigger,
     AsyncPipe,
-    MatInput
+    MatInput,
+    TranslatePipe
   ],
   templateUrl: './mat-autocomplete.html',
   styleUrl: './mat-autocomplete.css'

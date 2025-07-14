@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "mat-autocomplete": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "ru-RU": "src/locale/ru.json"
+        }
+      },
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,6 +19,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "localize": true,
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js",
@@ -22,7 +29,13 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "output": "/"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
               }
             ],
             "styles": [
@@ -67,7 +80,13 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular/build:extract-i18n"
+          "builder": "@angular/build:extract-i18n",
+          "options": {
+            "localize": true,
+            "format": "json",
+            "outputPath": "src/locale",
+            "i18nMissingTranslation": "error",
+          }
         },
         "test": {
           "builder": "@angular/build:karma",
