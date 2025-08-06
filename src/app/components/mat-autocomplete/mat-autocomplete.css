@@ -7,3 +7,12 @@
 .example-full-width {
   width: 100%;
 }
+
+.invalid-input .mat-mdc-form-field-outline {
+  color: red;
+  border-color: red;
+}
+
+.invalid-input .mat-mdc-form-field-outline-thick {
+  border-color: red;
+}

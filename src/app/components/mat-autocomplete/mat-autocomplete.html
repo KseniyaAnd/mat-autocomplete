@@ -1,5 +1,7 @@
 <form class="example-form">
-  <mat-form-field class="example-full-width">
+  <mat-form-field
+    class="example-full-width"
+    [ngClass]="{ 'invalid-input': myControl.invalid && myControl.touched }">
     <input
       type="text"
       placeholder="Assignee"
@@ -7,7 +9,10 @@
       matInput
       [formControl]="myControl"
       [matAutocomplete]="auto"
+      (focus)="onFocus()"
+      (blur)="onBlur()"
     />
+
     <mat-autocomplete #auto="matAutocomplete">
       @for (option of filteredOptions | async; track option) {
         <mat-option [value]="option.name | translate">
@@ -17,4 +22,3 @@
     </mat-autocomplete>
   </mat-form-field>
 </form>
-<!--invalid некорректное значение,очищение филтра-->
