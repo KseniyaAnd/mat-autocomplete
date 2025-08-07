@@ -9,12 +9,11 @@
       matInput
       [formControl]="myControl"
       [matAutocomplete]="auto"
-      (focus)="onFocus()"
-      (blur)="onBlur()"
+
     />
 
-    <mat-autocomplete #auto="matAutocomplete">
-      @for (option of filteredOptions | async; track option) {
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="optionSelected()">
+      @for (option of filterString(); track option) {
         <mat-option [value]="option.name | translate">
           {{ option.name | translate }}
         </mat-option>
