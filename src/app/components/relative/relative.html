@@ -1,0 +1,31 @@
+<mat-card class="relative-card">
+  <div class="relative-card-period">
+    <div>Minutes</div>
+    <div class="relative-card-period-numbers">
+      <button mat-mini-fab class="relative-card-button" (click)="setValue('5', 'Minutes')">5</button>
+      <button mat-mini-fab class="relative-card-button" (click)="setValue('10', 'Minutes')">10</button>
+      <button mat-mini-fab class="relative-card-button" (click)="setValue('15', 'Minutes')">15</button>
+    </div>
+  </div>
+
+  <div class="relative-card-period">
+    <div>Hours</div>
+    <div class="relative-card-period-numbers">
+      <button mat-mini-fab class="relative-card-button" (click)="setValue('5', 'Hours')">5</button>
+      <button mat-mini-fab class="relative-card-button" (click)="setValue('10', 'Hours')">10</button>
+      <button mat-mini-fab class="relative-card-button" (click)="setValue('15', 'Hours')">15</button>
+    </div>
+  </div>
+
+  <div class="relative-card-inputs-wrapper">
+    <input matNativeControl class="relative-card-input" [formControl]="inputValue">
+
+    <mat-form-field>
+      <mat-select [formControl]="toppings">
+        @for (topping of toppingList; track topping) {
+          <mat-option [value]="topping">{{ topping }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+</mat-card>

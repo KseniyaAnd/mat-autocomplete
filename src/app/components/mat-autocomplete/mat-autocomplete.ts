@@ -2,7 +2,6 @@ import {Component, DestroyRef, effect, inject, OnInit, signal} from '@angular/co
 import {MatAutocomplete, MatAutocompleteTrigger, MatOption} from '@angular/material/autocomplete';
 import {MatFormField, MatInput} from '@angular/material/input';
 import {AbstractControl, FormControl, ReactiveFormsModule, ValidationErrors, ValidatorFn} from '@angular/forms';
-import {BehaviorSubject, map, Observable, of, startWith, switchMap} from 'rxjs';
 import {AsyncPipe, NgClass} from '@angular/common';
 import {AutocompleteService} from '../../services/autocomplete-service';
 import {TranslatePipe} from '@ngx-translate/core';

@@ -1,0 +1,16 @@
+.calendar-card-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+.calendar-card-wrapper div {
+  display: flex;
+  gap: 1rem;
+}
+.calendar-card {
+  width: 300px;
+}
+
+
+.calendar-card-input:focus {
+  outline: none;
+}

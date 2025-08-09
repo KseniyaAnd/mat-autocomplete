@@ -2,10 +2,13 @@ import {Component, inject} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {Autocomplete} from './components/mat-autocomplete/mat-autocomplete';
 import {TranslateService} from '@ngx-translate/core';
+import {Calendar} from './components/calendar/calendar';
+import {Relative} from './components/relative/relative';
+import {MatTab, MatTabGroup} from '@angular/material/tabs';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Autocomplete],
+  imports: [RouterOutlet, Autocomplete, Calendar, Relative, MatTabGroup, MatTab],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

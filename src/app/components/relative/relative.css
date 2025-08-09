@@ -1,0 +1,44 @@
+.relative-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.relative-card-period {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.relative-card-inputs-wrapper {
+  display: flex;
+  gap: 16px;
+}
+
+.relative-card-input {
+  height: 56px;
+  background: #e0e2ec;
+  border: none;
+  border-bottom: 1px solid #000000;
+  padding: 0 16px;
+  border-radius: 4px 4px 0 0;
+}
+
+.relative-card-input:focus {
+  outline: none;
+}
+
+.relative-card-select {
+  width: 300px;
+  background: white;
+}
+
+.relative-card-period-numbers {
+  display: flex;
+  gap: 16px;
+}
+
+.relative-card-button {
+  border-radius: 100%;
+}
