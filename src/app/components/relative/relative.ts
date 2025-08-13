@@ -24,13 +24,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   styleUrl: './relative.css'
 })
 export class Relative {
-  inputValue = new FormControl('');
-  toppings = new FormControl('');
+  inputValue = new FormControl();
+  rangeControl = new FormControl('');
 
-  toppingList: string[] = ['Minutes', 'Hours'];
+  rangeNumbersMinutesList: number[] = [5, 10, 15, 20, 30, 45];
+  rangeNumbersHoursList: number[] = [1, 2, 3, 6, 8, 12];
+  rangeNumbersDaysList: number[] = [1, 2, 3, 4, 5, 6];
+  rangeNumbersWeeksList: number[] = [1, 2, 3, 4];
+  rangeNumbersNamesList: string[] = ['Minutes', 'Hours', 'Days', 'Weeks'];
 
-  setValue(value: string, unit: string) {
+  setValue(value: number, unit: string) {
     this.inputValue.setValue(value);
-    this.toppings.setValue(unit);
+    this.rangeControl.setValue(unit);
   }
 }

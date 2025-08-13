@@ -1,37 +1,39 @@
-<mat-card class="calendar-card-wrapper">
-  <div>
-    <mat-card class="calendar-card">
+<div class="calendar-card-wrapper">
+  <div class="calendar-header">dcsdfcdsfds</div>
+  <div class="calendar-cards-wrapper">
+    <div class="calendar-card">
       <mat-calendar
         #first_calendar
         [(selected)]="selectedDateRange"
         (selectedChange)="rangeChanged($event)"
       ></mat-calendar>
-    </mat-card>
-    <mat-card class="calendar-card">
+    </div>
+    <div class="calendar-card">
       <mat-calendar
         [(selected)]="selectedDateRange"
         (selectedChange)="rangeChanged($event)"
       ></mat-calendar>
-    </mat-card>
+    </div>
   </div>
 
-  <div class="calendar-card-inputs-wrapper">
-    <mat-form-field class="example-full-width">
-      <mat-label>From</mat-label>
-      <input
-        matInput
-        [value]="selectedDateRange?.start | date:'yyyy-MM-dd'"
-        readonly
-      />
-    </mat-form-field>
+</div>
 
-    <mat-form-field class="example-full-width">
-      <mat-label>To</mat-label>
-      <input
-        matInput
-        [value]="selectedDateRange?.end | date:'yyyy-MM-dd'"
-        readonly
-      />
-    </mat-form-field>
-  </div>
-</mat-card>
+<div class="example-full-width">
+  <mat-form-field >
+    <mat-label>From</mat-label>
+    <input
+      matInput
+      [value]="selectedDateRange?.start | date:'yyyy-MM-dd'"
+      readonly
+    />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>To</mat-label>
+    <input
+      matInput
+      [value]="selectedDateRange?.end | date:'yyyy-MM-dd'"
+      readonly
+    />
+  </mat-form-field>
+</div>

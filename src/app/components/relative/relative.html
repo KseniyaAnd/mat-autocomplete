@@ -1,31 +1,58 @@
-<mat-card class="relative-card">
+<div class="relative-card">
   <div class="relative-card-period">
     <div>Minutes</div>
     <div class="relative-card-period-numbers">
-      <button mat-mini-fab class="relative-card-button" (click)="setValue('5', 'Minutes')">5</button>
-      <button mat-mini-fab class="relative-card-button" (click)="setValue('10', 'Minutes')">10</button>
-      <button mat-mini-fab class="relative-card-button" (click)="setValue('15', 'Minutes')">15</button>
+      @for (rangeNumberMinutes of rangeNumbersMinutesList; track rangeNumberMinutes) {
+        <button mat-mini-fab class="relative-card-button"
+                (click)="setValue(rangeNumberMinutes, 'Minutes')">{{ rangeNumberMinutes }}
+        </button>
+      }
     </div>
   </div>
 
   <div class="relative-card-period">
     <div>Hours</div>
     <div class="relative-card-period-numbers">
-      <button mat-mini-fab class="relative-card-button" (click)="setValue('5', 'Hours')">5</button>
-      <button mat-mini-fab class="relative-card-button" (click)="setValue('10', 'Hours')">10</button>
-      <button mat-mini-fab class="relative-card-button" (click)="setValue('15', 'Hours')">15</button>
+      @for (rangeNumberHour of rangeNumbersHoursList; track rangeNumberHour) {
+        <button mat-mini-fab class="relative-card-button"
+                (click)="setValue(rangeNumberHour, 'Hours')">{{ rangeNumberHour }}
+        </button>
+      }
+    </div>
+  </div>
+
+  <div class="relative-card-period">
+    <div>Days</div>
+    <div class="relative-card-period-numbers">
+      @for (rangeNumberDay of rangeNumbersDaysList; track rangeNumberDay) {
+        <button mat-mini-fab class="relative-card-button"
+                (click)="setValue(rangeNumberDay, 'Days')">{{ rangeNumberDay }}
+        </button>
+      }
+    </div>
+  </div>
+
+  <div class="relative-card-period">
+    <div>Weeks</div>
+    <div class="relative-card-period-numbers">
+      @for (rangeNumberWeek of rangeNumbersWeeksList; track rangeNumberWeek) {
+        <button mat-mini-fab class="relative-card-button"
+                (click)="setValue(rangeNumberWeek, 'Weeks')">{{ rangeNumberWeek }}
+        </button>
+      }
     </div>
   </div>
 
   <div class="relative-card-inputs-wrapper">
     <input matNativeControl class="relative-card-input" [formControl]="inputValue">
 
-    <mat-form-field>
-      <mat-select [formControl]="toppings">
-        @for (topping of toppingList; track topping) {
-          <mat-option [value]="topping">{{ topping }}</mat-option>
-        }
-      </mat-select>
-    </mat-form-field>
+    <select name="pets" id="pet-select" class="select-input" >
+      @for (rangeNumberName of rangeNumbersNamesList; track rangeNumberName) {
+        <mat-option [value]="rangeNumberName"></mat-option>
+        <option value=rangeNumberName>{{ rangeNumberName }}</option>
+      }
+    </select>
   </div>
-</mat-card>
+
+
+</div>

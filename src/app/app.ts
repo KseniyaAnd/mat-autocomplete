@@ -5,10 +5,11 @@ import {TranslateService} from '@ngx-translate/core';
 import {Calendar} from './components/calendar/calendar';
 import {Relative} from './components/relative/relative';
 import {MatTab, MatTabGroup} from '@angular/material/tabs';
+import {DateRangeInput} from './components/date-range-input/date-range-input';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Autocomplete, Calendar, Relative, MatTabGroup, MatTab],
+  imports: [RouterOutlet, Autocomplete, Calendar, Relative, MatTabGroup, MatTab, DateRangeInput],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

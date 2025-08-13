@@ -1,16 +1,27 @@
 .calendar-card-wrapper {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
+
 }
-.calendar-card-wrapper div {
+
+.calendar-cards-wrapper {
   display: flex;
-  gap: 1rem;
+  flex-direction: row;
 }
+
 .calendar-card {
   width: 300px;
 }
 
-
 .calendar-card-input:focus {
   outline: none;
+}
+
+::ng-deep mat-calendar-header {
+  display: none !important;
+}
+
+::ng-deep .mat-calendar-table-header {
+  color: #e9ecf3 !important;
 }
