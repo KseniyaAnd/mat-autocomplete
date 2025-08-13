@@ -1,19 +1,14 @@
-.input-calendar-wrapper {
-  position: relative;
-  display: inline-block;
-}
+
 
 .input-calendar-wrapper input {
   width: 400px;
-  height: 30px;
   padding: 10px;
-  background: inherit;
-  border: #212c3e 2px solid;
-  border-radius: 4px;
-  color: #c8c8c8;
   font-size: 16px;
-  font-weight: 400;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: inherit;
+  border-radius: 4px;
+  border: #2c3343 2px solid;
+  color: #e9ecf3;
+  font-family: Roboto, "Helvetica Neue", sans-serif;;
 }
 
 .input-calendar-wrapper input:focus {
@@ -21,35 +16,65 @@
 }
 
 .tabs {
-  width: 700px;
-  background-color: #161e31;
-
-  border-radius: 16px;
+  width: 616px;
+  background: #212c3e;
+  border-radius: 4px;
 }
 
-.tabs-group {
-  background-color: #212c3e;
-
-  border-bottom: 1px solid #1a2339 !important;
+::ng-deep .mat-mdc-tab-body {
+  background: #161e31;
 }
 
-.mat-tab label {
-  color: white;
+::ng-deep .mat-mdc-tab-label-container {
+  border-bottom-color: #2d384a !important;
 }
 
-.tabs-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 400px;
-  background: white;
-  border: 1px solid #ccc;
-  z-index: 10;
-  padding: 8px;
+::ng-deep .mdc-tab__text-label {
+  color: #e8edef !important;
+}
+
+::ng-deep .mdc-tab-indicator--active .mdc-tab__text-label {
+  color: #788fcf !important;
+}
+
+::ng-deep .mat-mdc-tab .mdc-tab-indicator__content--underline {
+  border-color: #788fcf !important;
+}
+
+.advanced-options {
+  padding: 0 16px 40px 40px;
+  color: #485dc8;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: #161e31;
+  width: 560px;
 }
 
 .actions {
+  width: 584px;
+  padding: 16px;
   display: flex;
   justify-content: flex-end;
-  margin-top: 8px;
+  gap: 1rem;
+  background: #212c3e;
+  border-top: #293345 2px solid;
 }
+
+.cancel-button {
+  background: none;
+  border: none;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  color: #6e8aec;
+  font-weight: 500;
+}
+
+::ng-deep .mat-mdc-unelevated-button, .mat-mdc-unelevated-button .mdc-button__ripple {
+  border-radius: 4px !important;
+  color: #0e215a !important;
+  background: #788fcf !important;
+}
+
+
+

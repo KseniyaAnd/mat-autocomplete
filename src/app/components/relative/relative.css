@@ -1,28 +1,35 @@
 .relative-card {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 16px;
+  gap: 12px;
+  margin: 24px;
+  color: #f2f8fb;
+  font-size: 14px;
+  border-bottom: 2px solid #2d3548;
 }
 
 .relative-card-period {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 2px;
 }
 
 .relative-card-inputs-wrapper {
+  margin-bottom: 24px;
   display: flex;
   gap: 16px;
 }
 
 .relative-card-input {
-  height: 56px;
-  background: #e0e2ec;
-  border: none;
-  border-bottom: 1px solid #000000;
-  padding: 0 16px;
-  border-radius: 4px 4px 0 0;
+  height: 30px;
+  width: 200px;
+  background: #101928;
+  border: 2px solid #2d3548;
+  border-radius: 4px;
+  padding: 0 14px;
+  color: #ddf3fe;
+  font-size: 14px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .relative-card-input:focus {
@@ -41,4 +48,21 @@
 
 .relative-card-button {
   border-radius: 100%;
+  background: #222b3c;
+  border: #283144 2px solid;
+  color: #ddf3fe;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  box-shadow: none;
+}
+
+.select-input {
+  width: 320px;
+  height: 34px;
+  background: #101928;
+  border: 2px solid #2d3548;
+  border-radius: 4px;
+  padding: 2px 14px;
+  color: #ddf3fe;
+  font-size: 14px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

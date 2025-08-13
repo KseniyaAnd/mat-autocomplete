@@ -5,19 +5,22 @@
   />
 </form>
 @if (showTabs()) {
-  <div class="tabs">
-    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" fitInkBarToContent class="tabs-group" #tabsWrapper>
-      <mat-tab label="Relative">
-        <app-relative></app-relative>
-      </mat-tab>
-      <mat-tab label="Calendar">
-        <app-calendar></app-calendar>
-      </mat-tab>
-    </mat-tab-group>
+  <mat-tab-group class="tabs" mat-stretch-tabs="false" mat-align-tabs="start" fitInkBarToContent #tabsWrapper>
+    <mat-tab label="Relative">
+      <app-relative></app-relative>
+    </mat-tab>
+    <mat-tab label="Calendar">
+      <app-calendar></app-calendar>
+    </mat-tab>
+  </mat-tab-group>
 
-    <div class="actions">
-      <button mat-button color="primary" (click)="apply()">Apply</button>
-    </div>
+  <div class="advanced-options">
+    Show advanced options
+  </div>
+
+  <div class="actions">
+    <button class="cancel-button" (click)="apply()">Cancel</button>
+    <button matButton="filled" (click)="apply()">Done</button>
+
   </div>
 }
-
