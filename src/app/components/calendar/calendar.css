@@ -5,9 +5,48 @@
 
 }
 
+.example-full-width {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.example-full-width-inputs {
+  display: flex;
+  gap: 16px;
+}
+
+.example-full-width-inputs input {
+  width: 120px;
+  background-color: #121929;
+  border: 2px solid #2c3545;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family:  Roboto, "Helvetica Neue", sans-serif;
+  color: #e8edef !important;
+}
+
 .calendar-cards-wrapper {
   display: flex;
   flex-direction: row;
+  gap: 24px;
+}
+
+.calendar-header {
+  display: flex;
+}
+
+.calendar-arrows {
+  width: 28px;
+  fill: #3e4659;
+}
+
+.calendar-header-date {
+  flex: 1;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .calendar-card {
@@ -23,5 +62,30 @@
 }
 
 ::ng-deep .mat-calendar-table-header {
+  border-bottom: 2px solid #2f374a !important;
+}
+
+::ng-deep .mat-calendar-table-header tr th {
   color: #e9ecf3 !important;
+}
+
+::ng-deep .mat-calendar-body tr td{
+  color: #e9ecf3 !important;
+}
+
+::ng-deep .mat-calendar-body tr td button span:not(.mat-calendar-body-selected) {
+  color: #e9ecf3 !important;
+}
+
+::ng-deep .mat-calendar-body-today {
+  border-color: #b9babd !important;
+}
+
+::ng-deep .mat-calendar-body-selected {
+  background-color: #748cee !important;
+  color: #000522 !important;
+}
+
+::ng-deep .mat-calendar-body-in-range::before {
+  background-color: #122fa4 !important;
 }

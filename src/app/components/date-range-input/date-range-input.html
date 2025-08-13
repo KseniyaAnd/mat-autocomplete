@@ -2,15 +2,18 @@
   <input
     (click)="toggleTabs()"
     placeholder="Date"
+    [value]="combinedDateTime | date:'yyyy-MM-dd HH:mm'"
+    readonly
   />
 </form>
+
 @if (showTabs()) {
   <mat-tab-group class="tabs" mat-stretch-tabs="false" mat-align-tabs="start" fitInkBarToContent #tabsWrapper>
     <mat-tab label="Relative">
-      <app-relative></app-relative>
+      <app-relative (valueChange)="onRelativeChange($event)"></app-relative>
     </mat-tab>
     <mat-tab label="Calendar">
-      <app-calendar></app-calendar>
+      <app-calendar disablePeriod="month" (dateChange)="onDateChange($event)"></app-calendar>
     </mat-tab>
   </mat-tab-group>
 
@@ -21,6 +24,5 @@
   <div class="actions">
     <button class="cancel-button" (click)="apply()">Cancel</button>
     <button matButton="filled" (click)="apply()">Done</button>
-
   </div>
 }
