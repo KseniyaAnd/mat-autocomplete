@@ -20,4 +20,6 @@ export class App {
   constructor() {
     this.translateService.setDefaultLang('en');
   }
+
+  protected readonly Date = Date;
 }

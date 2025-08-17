@@ -1,49 +1,61 @@
 <div class="calendar-card-wrapper">
-  <div class="calendar-header">
-    <div class="calendar-arrows" (click)="prevMonth()">
-      <svg viewBox="0 0 24 24">
-        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
-      </svg>
-    </div>
-    <div class="calendar-header-date">{{ headerRangeText }}</div>
-    <div class="calendar-arrows" (click)="nextMonth()">
-      <svg viewBox="0 0 24 24">
-        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
-      </svg>
-    </div>
-  </div>
-
-  <div class="calendar-cards-wrapper">
-    <div class="calendar-card">
-      <mat-calendar
-        #first_calendar
-        [(selected)]="selectedDateRange"
-        (selectedChange)="rangeChanged($event)"
-      ></mat-calendar>
-
-      <div class="example-full-width">
-        <div>From</div>
-        <div class="example-full-width-inputs">
-          <input matInput [value]="fullDateTime" readonly />
-          <input matInput [value]="shiftedTime" readonly />
+    <div class="calendar-header">
+        <div class="calendar-arrows" (click)="prevMonth()">
+            <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path></svg>
         </div>
-      </div>
-    </div>
-
-    <div class="calendar-card">
-      <mat-calendar
-        #second_calendar
-        [(selected)]="selectedDateRange"
-        (selectedChange)="rangeChanged($event)"
-      ></mat-calendar>
-
-      <div class="example-full-width">
-        <div>To</div>
-        <div class="example-full-width-inputs">
-          <input matInput [value]="fullDateTime" readonly />
-          <input matInput [value]="toDateTime" readonly />
+        <div class="calendar-header-date">{{ headerRangeText }}</div>
+        <div class="calendar-arrows" (click)="nextMonth()">
+            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg>
         </div>
-      </div>
     </div>
-  </div>
+
+    <div class="calendar-cards-wrapper">
+        <!-- FROM -->
+        <div class="calendar-card">
+            <mat-calendar
+                #first_calendar
+                [minDate]="minDate"
+                [maxDate]="maxDate"
+                [(selected)]="selectedDateRange"
+                (selectedChange)="rangeChanged($event)"
+            ></mat-calendar>
+
+            <div class="example-full-width">
+                <div>From</div>
+                <div class="example-full-width-inputs">
+                    <input matInput [value]="fromDate | date:'yyyy-MM-dd'" readonly />
+                    <input
+                            matInput
+                            placeholder="HH:mm"
+                            [(ngModel)]="fromTime"
+                            (blur)="rebuildFromDateTime()"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <!-- TO -->
+        <div class="calendar-card">
+            <mat-calendar
+                #second_calendar
+                [minDate]="minDate"
+                [maxDate]="maxDate"
+                [(selected)]="selectedDateRange"
+                (selectedChange)="rangeChanged($event)"
+            ></mat-calendar>
+
+            <div class="example-full-width">
+                <div>To</div>
+                <div class="example-full-width-inputs">
+                    <input matInput [value]="toDate | date:'yyyy-MM-dd'" readonly />
+                    <input
+                            matInput
+                            placeholder="HH:mm"
+                            [(ngModel)]="toTime"
+                            (blur)="rebuildToDateTime()"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

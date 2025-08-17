@@ -53,6 +53,7 @@ export class Relative implements OnInit {
     this.inputValue.setValue(value);
     this.rangeControl.setValue(unit);
     this.activeButton = {unit, value};
+    this.valueChange.emit({ unit, value });
   }
 
   isActive(unit: string, value: number) {
@@ -65,13 +66,14 @@ export class Relative implements OnInit {
 
     const currentList = this.getListByUnit(unit);
     if (currentList?.includes(numVal)) {
-      this.activeButton = {unit, value: numVal};
+      this.activeButton = { unit, value: numVal };
+      this.valueChange.emit({ unit, value: numVal }); // 👈 эмитим валидную ручную связку
     } else {
-      this.activeButton = {unit: '', value: null};
+      this.activeButton = { unit: '', value: null };
+      // Можно ничего не эмитить, чтобы родитель не сбрасывал pending
     }
 
     this.activeButton.value = this.activeButton.value ?? 0;
-
   }
 
   private getListByUnit(unit: string) {
